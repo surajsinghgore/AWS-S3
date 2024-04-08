@@ -24,8 +24,12 @@ app.get('/', (req, res) => {
 app.use('/getparticularobject', require('./getparticularobject.js'));
 
 // post files to s3 bucket in private access
-// api path=> http://localhost:3000/posttobucket
+// POST api path=> http://localhost:3000/posttobucket
 app.use('/posttobucket', require('./posttobucket.js'));
+
+// get all files from s3 bucket in private access
+// get api path=> http://localhost:3000/posttobucket
+app.use('/getallfiles', require('./getallfiles.js'));
 
 
 

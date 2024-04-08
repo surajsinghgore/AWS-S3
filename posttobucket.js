@@ -37,6 +37,21 @@ const upload = multer({
   fileFilter: fileFilter,
 });
 
+
+
+// sending objects function
+async function putObjectToCloud(filename,ImageGetFromClient,fileType) {
+  const command = new PutObjectCommand({
+    Bucket: process.env.AWS_BUCKETNAME,
+    Key: filename,
+    Body: ImageGetFromClient,
+    ContentType: fileType,
+  });
+  // sending request to aws s3 to get all objects
+  const result = await s3Client.send(command);
+ 
+  return result;
+}
 router.post("/", upload.single("Profile"), async function (req, res) {
   // get file buffer
   let ImageGetFromClient = req.file.buffer;
@@ -45,16 +60,9 @@ router.post("/", upload.single("Profile"), async function (req, res) {
     crypto.randomBytes(16).toString("hex") + req.file.originalname;
   // get content type of file
   let fileType = req.file.mimetype;
-  // confirm bucket details
-  const params = {
-    Bucket: process.env.AWS_BUCKETNAME,
-    Key: `Profile/${randomImageNameGen}`,
-    Body: ImageGetFromClient,
-    ContentType: fileType,
-  };
 
   // sending to aws bucket
-  await s3Client.send(new PutObjectCommand(params));
+ await putObjectToCloud(`Profile/${randomImageNameGen}`,ImageGetFromClient,fileType);
   return res.status(200).send("successfully file uploaded");
 });
 
