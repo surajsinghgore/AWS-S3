@@ -20,6 +20,7 @@ app.get('/', (req, res) => {
 
 
 // getting particular filename from s3 bucket in private access
+// api path=> http://localhost:3000/getparticularobject
 app.use('/getparticularobject', require('./getparticularobject.js'));
 
 app.listen(port, () => {
