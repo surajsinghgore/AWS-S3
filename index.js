@@ -23,6 +23,12 @@ app.get('/', (req, res) => {
 // api path=> http://localhost:3000/getparticularobject
 app.use('/getparticularobject', require('./getparticularobject.js'));
 
+// post files to s3 bucket in private access
+// api path=> http://localhost:3000/posttobucket
+app.use('/posttobucket', require('./posttobucket.js'));
+
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
