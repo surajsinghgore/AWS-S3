@@ -35,6 +35,10 @@ app.use('/getallfiles', require('./getallfiles.js'));
 app.use('/deletefile', require('./deletefile.js'));
 
 
+// update files
+app.use('/updatefiles', require('./updatefiles.js'));
+
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
