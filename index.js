@@ -31,6 +31,8 @@ app.use('/posttobucket', require('./posttobucket.js'));
 // get api path=> http://localhost:3000/posttobucket
 app.use('/getallfiles', require('./getallfiles.js'));
 
+// delete files
+app.use('/deletefile', require('./deletefile.js'));
 
 
 app.listen(port, () => {
