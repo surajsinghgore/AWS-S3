@@ -109,7 +109,7 @@ Amazon Simple Storage Service (Amazon S3) is a scalable object storage service o
 
 ![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712637680/aws/s3/epttoagh7uyihawcooiq.png)
 
-6.7 Copy and credentials and paste it to .env file 
+6.7 Copy and paste credentials in .env file
 
 
 | Parameter | Type     | Description                |
