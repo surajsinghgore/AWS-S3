@@ -53,7 +53,7 @@ Amazon Simple Storage Service (Amazon S3) is a scalable object storage service o
 
 
 
-5.Now set permissions to user
+5.Now create user to set permission
 
 5.1 Select add user to group option
 
@@ -79,3 +79,40 @@ Amazon Simple Storage Service (Amazon S3) is a scalable object storage service o
 5.6 Now  User Successfully created with s3 permission
 
 ![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712636591/aws/s3/gystogpufi1w2msdzmz2.png)
+
+
+#
+6.Now generate AWS ID AND KEY of user to access AWS
+
+6.1 Double click to user to generate secret key
+
+![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712637105/aws/s3/msggj6jcgr6z3ybteuct.png)
+
+6.2 select security credentials option 
+
+![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712637216/aws/s3/jpfpqlrfat1qsjicbcsk.png)
+
+6.3 click on create access key button
+
+![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712637308/aws/s3/rbxoauyxjmdfpkrqqxwx.png)
+
+
+6.4 Now, select the Command Line Interface (CLI), choose the Confirmation box option, and then click 'Next'.
+
+![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712637376/aws/s3/sthkytu8bj6cvzwluy7q.png)
+
+6.5 Now you can leave description option and click on create create access key
+
+![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712637539/aws/s3/tfuzdhusleb8asifwjcl.png)
+
+6.6 Now  User Successfully created AWS Access key and Secret access key
+
+![IMAGE](https://res.cloudinary.com/dnxv21hr0/image/upload/v1712637680/aws/s3/epttoagh7uyihawcooiq.png)
+
+6.7 Copy and credentials and paste it to .env file 
+
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `AWS_ACCESSKEYID` | `string` | **Required**. Your AWS Access key |
+| `AWS_SECRETACCESSKEY` | `string` | **Required**. Your AWS Secret access key |
